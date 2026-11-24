@@ -1,0 +1,13 @@
+[Unit]
+Description=Creative SB0490 volume wheel + mute button to PipeWire
+After=pipewire.service wireplumber.service
+PartOf=pipewire.service
+
+[Service]
+Type=simple
+ExecStart=%h/.local/bin/sb0490-remote.py
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=default.target
